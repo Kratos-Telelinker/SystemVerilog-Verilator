@@ -1,0 +1,7 @@
+# Ignore enum typedef file
+exclude-file: tinyalu_op_t.sv
+
+# Ignore reset logic
+exclude-line: tinyalu.sv:50
+exclude-line: single_cycle.sv:30
+exclude-line: three_cycle.sv:40

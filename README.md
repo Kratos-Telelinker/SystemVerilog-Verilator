@@ -23,27 +23,7 @@ generator.
 
 ---
 
-## 📁 Project Structure
 
-project/
-│
-├── coverage_html.py          # HTML report generator (no graphics)
-├── coverage_report.sh        # End‑to‑end coverage workflow
-├── Makefile                  # Verilator build + run + coverage extraction
-│
-├── obj_dir/                  # Verilator build output
-│   ├── Vtop                  # Simulation executable
-│   ├── coverage.dat          # Raw coverage database
-│   └── ...                   # Other Verilator artifacts
-│
-├── cov_annotate/             # Annotated source HTML (generated)
-│   ├── module1.sv.html
-│   ├── module2.sv.html
-│   └── ...
-│
-└── coverage.info             # LCOV coverage data (generated)
-
-Code
 
 ---
 

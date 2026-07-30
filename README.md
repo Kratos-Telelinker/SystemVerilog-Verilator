@@ -180,5 +180,4 @@ CI integration (GitHub Actions)
 Graphics were intentionally removed for stability, but can be re‑added cleanly.
 
 👤 Author
-Kratos — Calgary, Alberta
-Hardware verification enthusiast and retired Python engineer.
+Brad Balla kratos@telelinker.com verification enthusiast and retired Python engineer.

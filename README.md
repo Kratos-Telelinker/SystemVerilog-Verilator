@@ -1,4 +1,4 @@
-# RaySelemiUVMPrimer-with-Verilator
+# Ray Selemi UVM Primer-modified to use Verilator
 Repository cVerilator free simulator.
 
 This version intentionally contains **no graphics**, ensuring predictable layout

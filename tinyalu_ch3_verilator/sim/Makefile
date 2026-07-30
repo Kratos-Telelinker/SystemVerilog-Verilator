@@ -1,41 +1,54 @@
-# Auto-detect platform
+# Windows-safe Verilator Makefile (MSYS2 MinGW64)
+
 UNAME_S := $(shell uname -s)
 
 ifeq ($(UNAME_S),Linux)
     PLATFORM = linux
     VERILATOR = verilator
-    COPY_FLEX = echo "Linux: FlexLexer.h already in place"
+    VERILATOR_FLAGS = -Wall --Wno-fatal --trace --coverage --coverage-line --top-module tinyalu
 else
     PLATFORM = windows
     VERILATOR = verilator
-    COPY_FLEX = cp /usr/include/FlexLexer.h /mingw64/include/
+    VERILATOR_FLAGS := -Wall --Wno-fatal --trace --coverage --coverage-line --top-module tinyalu \
+        -I/mingw64/share/verilator/include
 endif
 
-# Design files
-RTL = ../rtl/tinyalu_op_t.sv ../rtl/tinyalu.sv ../rtl/single_cycle.sv ../rtl/three_cycle.sv
-TOP = tinyalu
+RTL_DIR := ../rtl
+OBJ_DIR := obj_dir
+TOP     := tinyalu
 
-# Build directories
-OBJDIR = obj_dir
+RTL_SRCS := \
+	$(RTL_DIR)/tinyalu_op_t.sv \
+	$(RTL_DIR)/tinyalu.sv \
+	$(RTL_DIR)/single_cycle.sv \
+	$(RTL_DIR)/single_cycle.sv \
+	$(RTL_DIR)/three_cycle.sv
 
-all: build
+TB  := sim_main.cpp
+EXE := $(OBJ_DIR)/V$(TOP)
 
-build:
-    @echo "=== Building on $(PLATFORM) ==="
-    $(COPY_FLEX)
-    $(VERILATOR) -Wall --trace --coverage --top-module $(TOP) --cc $(RTL) \
-        --exe sim_main.cpp --Mdir $(OBJDIR)
-    make -C $(OBJDIR) -f V$(TOP).mk
-
-run:
-    ./$(OBJDIR)/V$(TOP)
-
-coverage:
-    verilator_coverage --write-info coverage.info $(OBJDIR)/coverage.dat
-    verilator_coverage --annotate cov_annotate $(OBJDIR)/coverage.dat
-
-report:
-    python3 coverage_html.py coverage.info cov_annotate coverage_report.html
+all: clean build run
 
 clean:
-    rm -rf $(OBJDIR) cov_annotate coverage.info coverage_report.html
+	@echo "=== Cleaning old build ==="
+	rm -rf $(OBJ_DIR) cov_annotate coverage.info coverage_report.html
+
+build:
+	@echo "=== Building on $(PLATFORM) ==="
+	$(VERILATOR) $(VERILATOR_FLAGS) --cc $(RTL_SRCS) \
+		--exe $(TB) \
+		--Mdir $(OBJ_DIR)
+	make -C $(OBJ_DIR) -f V$(TOP).mk
+
+run:
+	@echo "=== Running TinyALU simulation ==="
+	$(EXE)
+
+coverage:
+	@echo "=== Generating coverage ==="
+	verilator_coverage --write-info coverage.info $(OBJ_DIR)/coverage.dat
+	verilator_coverage --annotate cov_annotate $(OBJ_DIR)/coverage.dat
+
+report:
+	@echo "=== Generating HTML report ==="
+	python3 coverage_html.py coverage.info cov_annotate coverage_report.html

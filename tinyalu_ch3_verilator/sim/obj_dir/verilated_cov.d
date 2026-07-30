@@ -1,8 +1,9 @@
-verilated_cov.o: /usr/local/share/verilator/include/verilated_cov.cpp \
- /usr/local/share/verilator/include/verilatedos.h \
- /usr/local/share/verilator/include/verilated_cov.h \
- /usr/local/share/verilator/include/verilated.h \
- /usr/local/share/verilator/include/verilated_config.h \
- /usr/local/share/verilator/include/verilated_types.h \
- /usr/local/share/verilator/include/verilated_funcs.h \
- /usr/local/share/verilator/include/verilated_cov_key.h
+verilated_cov.o: C:/msys64/mingw64/include/verilated_cov.cpp \
+ C:/msys64/mingw64/include/verilatedos.h \
+ C:/msys64/mingw64/include/windows.h \
+ C:/msys64/mingw64/include/verilated_cov.h \
+ C:/msys64/mingw64/include/verilated.h \
+ C:/msys64/mingw64/include/verilated_config.h \
+ C:/msys64/mingw64/include/verilated_types.h \
+ C:/msys64/mingw64/include/verilated_funcs.h \
+ C:/msys64/mingw64/include/verilated_cov_key.h

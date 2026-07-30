@@ -1,11 +1,12 @@
-verilated_vcd_c.o: /usr/local/share/verilator/include/verilated_vcd_c.cpp \
- /usr/local/share/verilator/include/verilatedos.h \
- /usr/local/share/verilator/include/verilated.h \
- /usr/local/share/verilator/include/verilated_config.h \
- /usr/local/share/verilator/include/verilated_types.h \
- /usr/local/share/verilator/include/verilated_funcs.h \
- /usr/local/share/verilator/include/verilated_vcd_c.h \
- /usr/local/share/verilator/include/verilated_trace.h \
- /usr/local/share/verilator/include/verilated_trace_imp.h \
- /usr/local/share/verilator/include/verilated_intrinsics.h \
- /usr/local/share/verilator/include/verilated_threads.h
+verilated_vcd_c.o: C:/msys64/mingw64/include/verilated_vcd_c.cpp \
+ C:/msys64/mingw64/include/verilatedos.h \
+ C:/msys64/mingw64/include/windows.h \
+ C:/msys64/mingw64/include/verilated.h \
+ C:/msys64/mingw64/include/verilated_config.h \
+ C:/msys64/mingw64/include/verilated_types.h \
+ C:/msys64/mingw64/include/verilated_funcs.h \
+ C:/msys64/mingw64/include/verilated_vcd_c.h \
+ C:/msys64/mingw64/include/verilated_trace.h \
+ C:/msys64/mingw64/include/verilated_trace_imp.h \
+ C:/msys64/mingw64/include/verilated_intrinsics.h \
+ C:/msys64/mingw64/include/verilated_threads.h

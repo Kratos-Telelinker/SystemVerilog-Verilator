@@ -19,6 +19,7 @@ Vtinyalu__Syms::Vtinyalu__Syms(VerilatedContext* contextp, const char* namep, Vt
     // Setup each module's pointers to their submodules
     // Setup each module's pointer back to symbol table (for public functions)
     TOP.__Vconfigure(true);
+    // Setup scopes
 }
 
 Vtinyalu__Syms::~Vtinyalu__Syms() {

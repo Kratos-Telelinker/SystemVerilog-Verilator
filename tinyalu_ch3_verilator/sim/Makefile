@@ -1,49 +1,41 @@
-# ============================================================
-# TinyALU Verilator Build System
-# ============================================================
+# Auto-detect platform
+UNAME_S := $(shell uname -s)
 
-RTL_DIR := ../rtl
-OBJ_DIR := obj_dir
+ifeq ($(UNAME_S),Linux)
+    PLATFORM = linux
+    VERILATOR = verilator
+    COPY_FLEX = echo "Linux: FlexLexer.h already in place"
+else
+    PLATFORM = windows
+    VERILATOR = verilator
+    COPY_FLEX = cp /usr/include/FlexLexer.h /mingw64/include/
+endif
 
-# Verilator flags
-# VERILATOR_FLAGS := -Wall --Wno-fatal --trace --coverage --top-module tinyalu
-VERILATOR_FLAGS := -Wall --Wno-fatal --trace --coverage --coverage-line --top-module tinyalu
+# Design files
+RTL = ../rtl/tinyalu_op_t.sv ../rtl/tinyalu.sv ../rtl/single_cycle.sv ../rtl/three_cycle.sv
+TOP = tinyalu
 
+# Build directories
+OBJDIR = obj_dir
 
-
-RTL_SRCS := \
-    $(RTL_DIR)/tinyalu_op_t.sv \
-    $(RTL_DIR)/tinyalu.sv \
-    $(RTL_DIR)/single_cycle.sv \
-    $(RTL_DIR)/three_cycle.sv
-
-TB := sim_main.cpp
-EXE := $(OBJ_DIR)/Vtinyalu
-
-all: clean verilate build run
-
-clean:
-	@echo "=== Cleaning old build ==="
-	rm -rf $(OBJ_DIR)
-
-verilate:
-	@echo "=== Running Verilator ==="
-	verilator $(VERILATOR_FLAGS) --cc $(RTL_SRCS) \
-		--exe $(TB) \
-		--Mdir $(OBJ_DIR)
+all: build
 
 build:
-	@echo "=== Building simulation ==="
-	make -C $(OBJ_DIR) -f Vtinyalu.mk
-
-COV_DAT := $(OBJ_DIR)/coverage.dat
+    @echo "=== Building on $(PLATFORM) ==="
+    $(COPY_FLEX)
+    $(VERILATOR) -Wall --trace --coverage --top-module $(TOP) --cc $(RTL) \
+        --exe sim_main.cpp --Mdir $(OBJDIR)
+    make -C $(OBJDIR) -f V$(TOP).mk
 
 run:
-	@echo "=== Running TinyALU simulation ==="
-	$(EXE)
-	
+    ./$(OBJDIR)/V$(TOP)
 
 coverage:
-	@echo "=== Generating annotated coverage ==="
-	verilator_coverage --annotate obj_dir/cov_annotate obj_dir/coverage.dat
+    verilator_coverage --write-info coverage.info $(OBJDIR)/coverage.dat
+    verilator_coverage --annotate cov_annotate $(OBJDIR)/coverage.dat
 
+report:
+    python3 coverage_html.py coverage.info cov_annotate coverage_report.html
+
+clean:
+    rm -rf $(OBJDIR) cov_annotate coverage.info coverage_report.html

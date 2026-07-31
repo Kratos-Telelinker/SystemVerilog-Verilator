@@ -79,20 +79,23 @@ python
 
 ---
 
-## 🚀 Building Verilator (Portable)
+COMPLETE WINDOWS VERILATOR INSTALL SCRIPT
+install_verilator_windows.sh
 
-Use the provided script:
-./rebuild_verilator.sh
+Includes:
+MSYS2 package install
 
-It automatically:
+Cloning Verilator
 
-- Detects Windows vs Linux  
-- Installs missing dependencies  
-- Copies FlexLexer.h correctly on Windows  
-- Builds Verilator using the correct GCC  
-- Installs Verilator into the correct prefix  
+Building with autoconf + clang
 
----
+Installing into C:/msys64/mingw64
+
+Copying missing include files
+
+Fixing Windows path issues
+
+Verifying installation
 
 ## 🧪 Running Simulation + Coverage
 

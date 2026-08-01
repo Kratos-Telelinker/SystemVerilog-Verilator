@@ -62,7 +62,11 @@ Install Verilator: sudo make install.
 | Platform | Status | Notes |
 |---------|--------|-------|
 | **Linux (Ubuntu/Debian/Fedora)** | ✔ Supported | Uses system GCC + standard packages |
+<<<<<<< HEAD
 | **Windows (MSYS2 MinGW64)** | ✔ Supported | Requires MSYS2 + MinGW64 toolchain + Make|
+=======
+| **Windows (MSYS2 MinGW64)** | ✔ Supported | Requires MSYS2 + MinGW64 toolchain |
+>>>>>>> 64b4380205dcfb2a7241d6c4d38fd96934030845
 
 ---
 

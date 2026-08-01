@@ -1,8 +1,7 @@
-# Ray Selemi UVM Primer-modified to use Verilator
+# SystemVerilog using Verilator
 
-   Inspired from Ray Salemi's book UVM Primer.
    As a retired engingineer I did not have access to expensive high end simulators. 
-   This project has take the approach to utilize VERILATOR which fully supports UVM and SystemVerilog.
+   This project has take the approach to utilize VERILATOR which fully supports SystemVerilog.
    
    Verilator is an open-source tool that converts Verilog and SystemVerilog hardware description languages 
    into highly optimized C++ or SystemC models. It is primarily used for high-performance linting, simulation 
@@ -10,9 +9,9 @@
    Verilator compiles the design instead of interpreting it, resulting in fast and efficient execution 
 
 # Project Subfolders
-    Each sub folder contains a project relating to chapters in Ray Salemi's UVM Primer breaking down the huge UVM
-    methodolgy into bit size pieces that continue to grow a learners skill sets in managable pieces, rather than being 
-    over-whelmed by the methodology.
+    Each sub folder contains a project relating to various SystemVerilog concepts breaking down the huge 
+    subject into bit size pieces that continue to grow a learners skill sets in managable pieces, rather than being 
+    over-whelmed by the complexty.
 
 # Verilator Cross‑Platform Build & Coverage Framework  
     Portable workflow for Windows (MSYS2 MinGW64) and Linux

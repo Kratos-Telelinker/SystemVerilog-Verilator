@@ -118,16 +118,19 @@
               Useful for comparing Linux vs Windows performance.
 
 ##        build_windows.sh — MSYS2 MinGW64 Build Wrapper
-              Ensures a correct Windows environment, checks for path issues, validates Verilator built‑ins, and runs a clean build.
+              Ensures a correct Windows environment, checks for path issues, validates Verilator built‑ins, 
+              and runs a clean build.
 
 ##        sanitize_paths.sh — Windows Path & Environment Validator
-              Detects path problems, verifies MSYS2 MinGW64, fixes missing headers, and ensures Verilator uses correct include paths.
+              Detects path problems, verifies MSYS2 MinGW64, fixes missing headers, and ensures Verilator 
+              uses correct include paths.
 
 ##        coverage_report.sh — Coverage Dashboard Generator
               Creates coverage.info, annotated source, and a full HTML coverage dashboard using Verilator + Python.
 
 ##         sim_main.cpp — TinyALU Verilator Testbench
-              C++ simulation harness that drives TinyALU, generates randomized tests, logs results, dumps VCD waveforms, and writes                       coverage data.
+              C++ simulation harness that drives TinyALU, generates randomized tests, logs results, 
+              dumps VCD waveforms, and writes coverage data.
 
 
 

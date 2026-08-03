@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# sanitize_paths.sh
 # Path sanitizer to prevent Windows from breaking Verilator
 
 set -e

@@ -1,3 +1,4 @@
+// sim_main.cpp
 #include "Vtinyalu.h"
 #include "verilated.h"
 #include "verilated_vcd_c.h"

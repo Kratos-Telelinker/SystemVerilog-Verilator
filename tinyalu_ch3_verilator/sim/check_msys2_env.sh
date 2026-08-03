@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# check_msys2_env.sh
 # Diagnostic script for MSYS2 + Verilator environment
 
 set -e

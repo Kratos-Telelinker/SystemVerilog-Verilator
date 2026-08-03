@@ -135,10 +135,6 @@
               dumps VCD waveforms, and writes coverage data.
 
 
----
 
-![Telelinker Logic Solutions](assets/telelinker-logo.png)
-
-© 2026 Telelinker Logic Solutions. All rights reserved.
 
 👤 Author Brad Balla kratos@telelinker.com Design and Verification, Python Developer retired.

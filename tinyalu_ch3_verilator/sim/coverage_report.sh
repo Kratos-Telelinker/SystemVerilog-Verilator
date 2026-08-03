@@ -1,4 +1,5 @@
 #!/bin/bash
+# coverage_report.sh
 
 # Stop on any error
 set -e

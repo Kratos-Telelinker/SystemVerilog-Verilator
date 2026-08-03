@@ -1,15 +1,3 @@
-# Ray Selemi UVM Primer-modified to use Verilator
-Repository cVerilator free simulator.
-
-# Verilator Cross‑Platform Build & Coverage Framework  
-Portable workflow for Windows (MSYS2 MinGW64) and Linux
-
-This repository provides a complete, reproducible workflow for building Verilator
-from source, running simulations, extracting coverage, generating annotated
-source, and producing a clean HTML coverage dashboard. The system is designed to
-work identically on **Linux** and **Windows (MSYS2 MinGW64)**.
-
----
 
 ## 📘 Overview
 

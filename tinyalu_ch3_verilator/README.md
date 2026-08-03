@@ -1,4 +1,6 @@
-### A cross‑platform hardware‑verification project demonstrating how to simulate, test, and measure coverage for a small ALU using               Verilator.
+![Telelinker Logic Solutions](assets/telelinker-logo.png)
+
+### A cross‑platform hardware‑verification project demonstrating how to simulate, test, and measure coverage for a small ALU using Verilator.
 
 ## Overview
     TinyALU is a compact SystemVerilog design used to demonstrate:
@@ -9,7 +11,7 @@
           Waveform tracing (VCD)
           Coverage collection & HTML reporting
           Windows‑safe builds using MSYS2 MinGW64
-    
+     
 ##     This project is ideal for engineers learning:
           Verilator workflows
           C++‑based hardware simulation
@@ -132,5 +134,11 @@
               C++ simulation harness that drives TinyALU, generates randomized tests, logs results, 
               dumps VCD waveforms, and writes coverage data.
 
+
+---
+
+![Telelinker Logic Solutions](assets/telelinker-logo.png)
+
+© 2026 Telelinker Logic Solutions. All rights reserved.
 
 👤 Author Brad Balla kratos@telelinker.com Design and Verification, Python Developer retired.

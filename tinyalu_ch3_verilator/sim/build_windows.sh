@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Build_windows.sh 
 # Windows-safe build wrapper for Verilator (MSYS2 MinGW64)
 
 set -e

@@ -32,7 +32,7 @@
           Ensure you are in MSYS2 MinGW64, not MSYS2 or UCRT64.
 
 ## Directory Structure
-'''
+```
         UVM_Primer-for-Verilator/
         │
         ├── rtl/                 # SystemVerilog RTL
@@ -45,7 +45,7 @@
         │   ├── coverage_report.sh
         │   └── coverage_html.py
         └── obj_dir/             # Verilator build output
-'''
+```
 ## Building the Project
         Linux bash
             make

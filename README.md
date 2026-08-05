@@ -75,6 +75,8 @@
 
 
 ## 📁 Directory Structure
+
+```
 project/
 │
 ├── Makefile                     # Auto-detects Windows/Linux
@@ -91,7 +93,7 @@ project/
 │   └── ...
 │
 └── coverage.info                # LCOV coverage data (generated)
-
+```
 
 ### 🔧 Requirements
 
